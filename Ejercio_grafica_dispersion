@@ -1,0 +1,36 @@
+#Llamado de datos
+#Diseño: Paula Lilian Godínez Díaz 
+
+#install.packages("pacman") #Para instalar paquetes 
+
+library("pacman") #llamar paquetes
+
+p_load ("readr") # funcion en pacman para llamar otros paquetes y si no estan instalados, los instala 
+
+Datos_PCR <- read.csv(file="https://raw.githubusercontent.com/ManuelLaraMVZ/Transcript-mica/refs/heads/main/Resultados_tiempo_real.csv")
+
+head(Datos_PCR)
+
+p_load ("dplyr") #funcion para asignar una funcion
+
+Tabla_filtrada <- Datos_PCR %>% 
+  select("Ciclos","Cb")
+Tabla_filtrada
+View(Tabla_filtrada)
+
+p_load("ggplot2")
+
+grafica_1 <- ggplot(Tabla_filtrada,
+                    aes(x=Ciclos, y=Cb))+
+  geom_line()
+grafica_1
+
+ggplot(Tabla_filtrada, aes(x = Ciclos, y = Cb)) +
+  geom_line(color = "#E662EA") +      # Línea azul
+  geom_point(color = "#9DF83C") +      # Puntos rojos
+  labs(title = "Ciclos vs Fluoresencia",
+       subtitle = "Creo: Paula Godinez",
+       caption = "Muestra de cerebelo",
+       x = "Ciclos",
+       y = "Fluoresencia") +
+  theme_minimal()
