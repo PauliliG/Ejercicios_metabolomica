@@ -1,0 +1,7 @@
+Motivo_de_muerte<- c("Falla sistema urinario","Neoplasia","Infeccioso","Trauma","Falla sistema cardiovascular","Muerte subita","Cuerpo extraño")
+a <- c(16,13,23,19,4,3,1)
+b <- c (33,23,15,5,6,3,5)
+c <- c(47,50,13,3,9,1,0)
+d <- c(43,37,2,1,2,0,0)
+Tabla <- data.frame(Motivo_de_muerte = Motivo_de_muerte, "0 a 4 años" = a, "5 a 9 años"= b ,"10 a 14 años" = c, "15 años o mas"= d )
+View(Tabla) 
