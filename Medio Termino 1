@@ -1,0 +1,26 @@
+---
+title: "Examen MT"
+author: "Paula Godínez"
+date: "2025-03-05"
+output: html_document
+---
+```{r}
+
+Nombre <- c("Sonia", "Rebeca","Juan","Amanda","Gilberto")
+Edad <- c(25,20,19,19,25)
+Estatura <- c(1.6,1.78,1.9,1.55,1.7)
+Tabla_edad <- data.frame(Nombre=Nombre, Edad=Edad, Altura= Estatura)
+Tabla_edad 
+
+```
+
+```{r}
+promedio_edad <- mean(Tabla_edad$Edad)
+
+promedio_edad
+```
+```{r}
+promedio_altura <- mean(Tabla_edad$Altura)
+promedio_altura
+```
+
